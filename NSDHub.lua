@@ -15,7 +15,7 @@ getgenv().Keyinput = "string"
 function MakeScriptHub()
 if game.PlaceId == 3652625463 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "v1.7.5 Lifting Simulator", HidePremium = false, IntroEnabled = true,IntroText = "Welcome!", SaveConfig = true, ConfigFolder = "LiftingTest"})
+    local Window = OrionLib:MakeWindow({Name = "v1.7.5 Lifting Simulator", HidePremium = false, IntroEnabled = false,IntroText = "Welcome!", SaveConfig = true, ConfigFolder = "LiftingTest"})
                 
     --Values
     getgenv().autoLift = true
@@ -158,63 +158,6 @@ if game.PlaceId == 3652625463 then
         Image = "rbxassetid://4483345998",
         Time = 5
     })
-    end
-    OrionLib:Init()-- End of this script
-elseif placeid == 6516141723 then
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Doors", HidePremium = false, IntroEnabled = true,IntroText = "Welcome!", SaveConfig = true, ConfigFolder = "DoorTest"})
-
-    local DoorTab = Window:MakeTab({
-        Name = "Door Scripts",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
-
-    DoorTab:AddButton({
-        Name = "iCherryKardes Script",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua"))()
-        end
-    })
-
-    DoorTab:AddButton({
-        Name = "Vynixius Script",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/iCherryKardes/Doors/main/Floor%202%20Mod"))()
-        end
-    })
-    
-    DoorTab:AddButton({
-        Name = "Roblox Secred Door/Rooms Script",
-        Callback = function()
-            workspace.ChildAdded:Connect(function(Obj)
-                if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = Obj.Name .. " Spawned ⚠️",
-                        Text = "Hide quick",
-                        Duration = 5
-                    })
-                end
-            end)
-            workspace.ChildRemoved:Connect(function(Obj)
-                if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = Obj.Name .. " DeSpawned ✅",
-                        Text = "ur good",
-                        Duration = 5
-                    })
-                end
-            end)
-        end
-    })
-
-
-    OrionLib:MakeNotification({
-        Name = "Ty for using the my script",
-        Content = "You Executed me "..Player.Name..".",
-        Image = "rbxassetid://4483345998",
-        Time = 5 
-    })  
     end
     OrionLib:Init()-- End of this script
 end   
